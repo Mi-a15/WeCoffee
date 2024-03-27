@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wecoffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+       
+        .background{
+            background-color: #EBF1F2;
+            height: 1000vh;
+        }
+
+        .Navbar{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr;
+            padding-top: 1rem;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .logo{
+            grid-area: 1 / 1 / 2 / 3;
+            
+        }
+        
+        .Options{
+            grid-area: 1 / 3 / 2 / 10;
+            height: 10vh;
+        }
+
+        .search-box{
+            grid-area: 1 / 10 / 2 / -1;
+        }
+        
+        .Options-list, .logo, .search-box{
+            height: 8vh;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            font-weight: bolder;
+        }
+
+        #opt-item{
+            text-decoration: none;
+            color: #BF8563;
+            font-size: 1rem;
+            letter-spacing: 0.03rem;
+        }
+
+        .search-box{
+            border-radius: 20%;
+        }
+        .search-cont{
+            padding-left: 10%;
+            background: url(./Search.png) no-repeat left;
+            background-size: 10%;
+            background-color: #BC894A;
+            background-position: 5%;
+            height: 43px;
+            width: 55%;
+            border: none;
+            border:solid 1px #BC894A;
+            border-radius: 8px;
+            box-shadow: 0 0 8px 0px gray;           
+        }
+
+        .search-box > ::placeholder{
+            color: white;
+            font-weight: lighter;
+            letter-spacing: 0.02rem;
+        }
+        
+        .main-body{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-items: space-between;
+            align-items: start;
+            gap: 50px;
+            padding-left: 8%;
+            padding-right: 8%;
+            padding-top: 2%;
+            padding-bottom: 3%;
+        }
+
+        .main-left{
+            flex-shrink: 1;
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+            grid-template-rows: repeat(20,1fr);
+            width: 46%;
+            height: 620px;
+        }
+
+        .pic1{
+            width:96%; 
+            height:300%; 
+            object-fit:cover;
+            border-radius: 15px;
+            grid-area: 1 / 1 / 7 / 7;
+
+        }
+
+        .square{
+            background-color: none;
+            border: solid 8px #8C5230;
+            width: 90%;
+            height: 110%;
+            border-radius: 15px;
+            grid-area: 7 / 4 / 20 / 9;
+        }
+       
+        .main-right{
+            flex-shrink: 0;
+            flex-grow: 1;
+            width: 42%;
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+            grid-template-rows: repeat(13,40px);
+            gap: 3%;
+            
+        }
+
+        .open-text{
+            grid-area: 1 / 1 / 4 / 10;
+            letter-spacing: 0.06rem;
+
+        }
+
+        .open-text > h1{
+            font-size: 3rem;
+            font-weight: bolder;
+            padding-bottom: 0;
+            color: #401201;
+            
+        }
+
+        .open-text > #h1d{
+            font-size: 0.9rem;
+            font-weight: lighter;
+            padding-bottom: 0;
+        }
+
+        .open-text > #sii{
+            font-size: 1rem;
+            font-weight: lighter;
+            padding-bottom: 3%;
+        }
+
+        #siis{
+            color: #D98A29;
+        }
+
+        .first-name{
+            grid-area: 4 / 1 / 6 / 6;
+        }
+
+        .last-name{
+            grid-area: 4 / 6 / 6 / 10;
+        }
+
+        .email{
+            grid-area: 6 / 1 / 8 / 10;
+        }
+
+        .password{
+            grid-area: 8 / 1 / 10 / 10;
+        }
+
+        .fst-name > .input-boxx , .last-name > .input-boxx{
+            width: 95%;
+            
+        }
+
+        .input-boxx{
+            width: 100%;
+            height: 50px;
+            background-color: #EBF1F2;
+            border-radius: 15px;
+            border: solid 1px #D98A29;
+        }
+
+        .input-box > ::placeholder{
+            color: grey;
+            padding-left: 20px;
+            font-weight: lighter;
+        }
+
+        .box-title{
+            font-weight: 420;
+        }
+
+        .CA-button{
+            margin-top: 10%;
+            grid-area: 10/ 1 / 13 / 4;
+            height: 50px;
+            border-radius: 15px;
+            border: none;
+            background-color: #D98A29;
+            box-shadow: 0 0 8px 0px gray;
+            color: white;
+            font-weight: 520;
+            font-size: 1rem;
+            letter-spacing: 0.03rem;
+        }
+
+        .TC-declare{
+            margin-top: 5%;
+            grid-area: 10/ 4 / 13 / 10;
+        }
+
+        #TC-highlight{
+            color: black;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="background">
+        <nav class="Navbar">
+            <div class="logo">
+                <a href="http://127.0.0.1:3000/12.1 Project web design/index.html"><img src="./Logo.png" alt="WeCoffee-logo" height="50vh"/></a>
+            </div>
+            <div class="Options">
+                <ul class="Options-list">
+                    <li><a id="opt-item" href="#">Product</a></li>
+                    <li><a id="opt-item" href="#">Virtual café</a></li>
+                    <li><a id="opt-item" href="#">News</a></li>
+                    <li><a id="opt-item" href="#">About us</a></li>
+                    <li><a id="opt-item" href="#">Contact</a></li>
+            </ul>
+            </div>
+            <form class="search-box" role="search">
+                    <input class="search-cont" type="search" placeholder="Double expresso!" aria-label="Search">
+            </form>
+        </nav>
+        <div class="main-body" width="100%" height="auto">
+            <div class="main-left" padding-left="5%" padding-right="5%">
+                <img class="pic1" src="./dd93d7fe4d82fbec7d1f989040200a9f.jpg" alt="picture of a bohemian architecture styled space">
+                <div class="square"></div>
+            </div>
+            <div class="main-right">
+                <div class="open-text">
+                    <h1>Let's get started</h1>
+                    <p id="h1d">Create an account and get discount points while sipping your coffee!</p>
+                    <p id="sii">Already have an account? <span><a href="#" id="siis">Sign-in</a></span> now.</p>
+                </div>
+                <div class="first-name">
+                    <p class="box-title">FIRST NAME</p>
+                    <form class="input-box fst-name" role="input">
+                        <input class="input-boxx" type="input" placeholder="Alexander" aria-label="input">
+                    </form>
+                </div>
+                <div class="last-name">
+                    <p class="box-title">LAST NAME</p>
+                    <form class="input-box lst-name" role="input">
+                        <input class="input-boxx" type="input" placeholder="Maxim" aria-label="input">
+                    </form>
+                </div>
+                <div class="email">
+                    <p class="box-title">EMAIL</p>
+                    <form class="input-box eml" role="input">
+                        <input class="input-boxx" type="input" placeholder="Alexander.maxx@gmail.com" aria-label="input">
+                    </form>
+                </div>
+                <div class="password">
+                    <p class="box-title">PASSWORD</p>
+                    <form class="input-box psw" role="input">
+                        <input class="input-boxx" type="input" placeholder="**********" aria-label="input">
+                    </form>
+                </div>
+                <button class="CA-button" type="submit">Create account</button>
+                <p class="TC-declare">By clicking Create account button, you agree to our <span><a href="#" id="TC-highlight">term and condition</a></span>.</p>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
